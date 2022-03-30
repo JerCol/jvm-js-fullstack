@@ -20,7 +20,7 @@ val shoppingList = mutableListOf(
 )
 
 fun main() {
-    embeddedServer(Netty, 3000) {
+    embeddedServer(Netty, 8000) {
         install(ContentNegotiation) {
             json()
         }

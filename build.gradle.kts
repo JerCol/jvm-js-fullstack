@@ -59,13 +59,13 @@ kotlin {
                 implementation("io.ktor:ktor-client-js:$ktorVersion")
                 implementation("io.ktor:ktor-client-json:$ktorVersion")
                 implementation("io.ktor:ktor-client-serialization:$ktorVersion")
-
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-react:$reactVersion")
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom:$reactVersion")
             }
         }
     }
 }
+
 
 application {
     mainClass.set("ServerKt")
@@ -104,7 +104,7 @@ distributions {
     }
 }
 
-Alias "installDist" as "stage" (for cloud providers)
+// Alias "installDist" as "stage" (for cloud providers)
 tasks.create("stage") {
     dependsOn(tasks.getByName("installDist"))
 }
