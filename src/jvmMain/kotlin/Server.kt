@@ -7,7 +7,7 @@ import io.ktor.response.*
 import io.ktor.routing.*
 import io.ktor.serialization.*
 import io.ktor.server.engine.*
-import io.ktor.server.netty.*
+import io.ktor.server.jetty.*
 import org.litote.kmongo.*
 import org.litote.kmongo.coroutine.*
 import org.litote.kmongo.reactivestreams.KMongo
@@ -20,7 +20,7 @@ val shoppingList = mutableListOf(
 )
 
 fun main() {
-    embeddedServer(Netty, 8000) {
+    embeddedServer(Jetty, 8000) {
         install(ContentNegotiation) {
             json()
         }

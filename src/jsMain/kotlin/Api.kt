@@ -4,13 +4,12 @@ import io.ktor.client.request.*
 import io.ktor.client.features.json.JsonFeature
 import io.ktor.client.features.json.serializer.KotlinxSerializer
 // import io.ktor.client.engine.jetty.*
-
-
 import kotlinx.browser.window
+import io.ktor.client.engine.js.*
 
 val endpoint = window.location.origin // only needed until https://youtrack.jetbrains.com/issue/KTOR-453 is resolved
 
-val jsonClient = HttpClient() {
+val jsonClient = HttpClient(Js) {
     install(JsonFeature) { serializer = KotlinxSerializer() }
 }
 
