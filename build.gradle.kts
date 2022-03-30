@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpack
 
 val kotlinVersion = "1.6.10"
 val serializationVersion = "1.3.2"
-val ktorVersion = "1.6.7"
+val ktorVersion = "1.6.8"
 val logbackVersion = "1.2.10"
 val reactVersion = "17.0.2-pre.299-kotlin-1.6.10"
 val kmongoVersion = "4.5.0"
@@ -104,7 +104,7 @@ distributions {
     }
 }
 
-// Alias "installDist" as "stage" (for cloud providers)
+Alias "installDist" as "stage" (for cloud providers)
 tasks.create("stage") {
     dependsOn(tasks.getByName("installDist"))
 }
